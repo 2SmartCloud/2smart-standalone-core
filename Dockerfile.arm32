@@ -1,0 +1,6 @@
+FROM arm32v7/node:12-alpine
+
+WORKDIR /app
+
+CMD npm start
+

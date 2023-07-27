@@ -1,0 +1,72 @@
+{
+    "author": "2Smart",
+    "dependencies": {
+        "@babel/core": "^7.5.5",
+        "@babel/register": "^7.5.5",
+        "bluebird": "^3.7.2",
+        "cheerio": "^1.0.0-rc.3",
+        "crypto": "^1.0.1",
+        "dockerode": "^3.0.2",
+        "envfile": "^4.5.0",
+        "express": "^4.17.1",
+        "extensions-manager-sdk": "github:2SmartCloud/2smart-standalone-extensions-manager-sdk",
+        "fs-extra": "^8.1.0",
+        "generate-password": "^1.5.0",
+        "homie-sdk": "github:2SmartCloud/2smart-standalone-homie-sdk",
+        "livr": "^2.0.2",
+        "livr-extra-rules": "^1.2.1",
+        "lodash": "^4.17.20",
+        "mysql2": "^1.7.0",
+        "nanoid": "^2.1.9",
+        "parse-docker-image-name": "^3.0.0",
+        "request": "^2.88.2",
+        "request-promise": "^4.2.5",
+        "sequelize": "^5.19.4",
+        "underscore": "^1.9.2"
+    },
+    "description": "2Smart core",
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "@babel/runtime": "^7.5.5",
+        "babel-eslint": "10.0.1",
+        "cross-env": "^5.1.4",
+        "eslint": "^4.19.0",
+        "eslint-config-webbylab": "^4.0.0",
+        "eslint-plugin-fetch": "0.0.1",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jest": "^22.14.1",
+        "eslint-plugin-more": "^0.3.2",
+        "eslint-plugin-no-require-lodash": "^1.1.0",
+        "eslint-plugin-prefer-spread": "^1.0.3",
+        "eslint-plugin-react": "^7.21.5",
+        "istanbul": "^1.1.0-alpha.1",
+        "jest": "^24.8.0",
+        "jest-environment-node": "^24.8.0",
+        "nodemon": "^1.17.2",
+        "pre-commit": "^1.2.2"
+    },
+    "main": "app.js",
+    "name": "2smart-core",
+    "nodemonConfig": {
+        "ignore": [
+            "etc/bridge.configs/*",
+            "etc/bridge-type.configs/*"
+        ]
+    },
+    "pre-commit": [
+        "test:lint"
+    ],
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:2SmartCloud/2smart-standalone-core.git"
+    },
+    "scripts": {
+        "nodemon": "nodemon -L runner.js",
+        "start": "BABEL_DISABLE_CACHE=1 node runner.js",
+        "test:lint": "eslint lib app.js --ext js"
+    },
+    "version": "0.1.0"
+}
